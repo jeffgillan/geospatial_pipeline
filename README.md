@@ -17,7 +17,9 @@ This is what the command is doing:
 * Run docker
 * Not sure what flags `-it` do exactly
 * `--rm` removes image after is has been run
-* `-v` mounts a volume. In this case, it is directory on local machine (/home/jgillan/Documents/PVCC_hole17/green). Within this directory there must be a sub-directory called `/images`. This is where ODM will look for all of the raw drone images. 
+* `-v` mounts a volume. In this case, it is directory on my local machine (/home/jgillan/Documents/PVCC_hole17/green). Within this directory there must be a sub-directory called `/images`. This is where ODM will look for all of the raw drone images. 
+* The directory is mounted to the directory `/datasets/code` inside the image
+* 
 
 
 
