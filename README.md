@@ -29,3 +29,7 @@ Look at the directory structure inside a docker image
 ```
 docker run --rm -it --entrypoint=/bin/bash opendronemap/odm
 ```
+Look at the directory structure inside a running container
+```
+docker exec -it <container_id_or_name> sh
+```
