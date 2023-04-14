@@ -33,3 +33,6 @@ Look at the directory structure inside a running container
 ```
 docker exec -it <container_id_or_name> sh
 ```
+
+## Pipeline Exploration
+I am trying to create a pipeline of sequential containers that creates drone imagery products and then does some point cloud analysis. The first container is `opendronemap/odm` and the second container is `jeffgillan/pdal_copc:1.0`. I want outputs from the first container (point clouds .las) to serve as inputs for the second container (some PDAL analysis). I am exploring the use of docker-compose to create this pipeline. 
