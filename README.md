@@ -41,7 +41,7 @@ A `docker-compose.yml` is used to orchestrate this pipeline
 
 Here is my current build, with no idea what is correct or incorrect 
 ```
-ersion: "3.9"
+version: "3.9"
 services:
   odm:
     image: opendronemap/odm
