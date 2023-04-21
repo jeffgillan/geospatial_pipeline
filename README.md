@@ -33,9 +33,10 @@ I am trying to create a pipeline of sequential containers that creates drone ima
 
 A `docker-compose.yml` is used to orchestrate this pipeline
 
-Here is my current build, with no idea what is correct or incorrect 
+
 ```
 version: "3.8"
+
 services:
   odm:
     image: opendronemap/odm
