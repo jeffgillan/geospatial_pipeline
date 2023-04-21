@@ -22,17 +22,11 @@ This is what the command is doing:
 * `opendronemap/odm` is the name of the Docker image which is located on Dockerhub
 * The rest of the arguments are flags and options. These are parameters to change how the processing is done. By default, ODM will run through the entire processing pipeline unless you say otherwise. Check out options at https://docs.opendronemap.org/arguments/
 
+To run ODM with very quickly with low quality:
+```
+docker run -ti -v /home/jgillan/Documents/PVCC_hole17/green:/datasets/code  opendronemap/odm --project-path /datasets --skip-orthophoto --skip-report --pc-las --skip-3dmodel --pc-quality lowest
+```
 
-
-## Random Docker Things
-Look at the directory structure inside a docker image
-```
-docker run --rm -it --entrypoint=/bin/bash opendronemap/odm
-```
-Look at the directory structure inside a running container
-```
-docker exec -it <container_id_or_name> sh
-```
 
 ## Pipeline Exploration
 I am trying to create a pipeline of sequential containers that creates drone imagery products and then does some point cloud analysis. The first container is `opendronemap/odm` and the second container is `jeffgillan/pdal_copc:1.0`. I want outputs from the first container (point clouds .las) to serve as inputs for the second container (some PDAL analysis). I am exploring the use of docker-compose to create this pipeline. 
@@ -88,3 +82,14 @@ fi
 ```
 
 `docker-compose up`
+
+
+## Random Docker Things
+Look at the directory structure inside a docker image
+```
+docker run --rm -it --entrypoint=/bin/bash opendronemap/odm
+```
+Look at the directory structure inside a running container
+```
+docker exec -it <container_id_or_name> sh
+```
