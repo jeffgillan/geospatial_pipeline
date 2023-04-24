@@ -29,7 +29,7 @@ docker run -ti -v /home/jgillan/Documents/PVCC_hole17/green:/datasets/code  open
 
 
 ## Pipeline Exploration
-I am trying to create a pipeline of sequential containers that creates drone imagery products and then does some point cloud analysis. The first container is `opendronemap/odm` and the second container is `jeffgillan/pdal_copc:1.0`. I want outputs from the first container (point clouds .las) to serve as inputs for the second container (some PDAL analysis). I am exploring the use of docker-compose to create this pipeline. 
+I have created a pipeline of sequential containers that creates drone imagery products and then does some point cloud analysis. The first container is `opendronemap/odm` and the second container is `jeffgillan/pdal_copc:1.0`. I want outputs from the first container (point clouds .las) to serve as inputs for the second container (using PDAL to convert .las to .copc). 
 
 A `docker-compose.yml` is used to orchestrate this pipeline
 
@@ -54,9 +54,7 @@ services:
     volumes:
       - /home/jgillan/Documents/PVCC_hole17/green/odm_georeferencing:/data
 ```      
-
-
-
+The most important part of the docker-compose file is the `depends_on` section which states that the second container will wait to start until the first container finishes. 
 
 `docker-compose up`
 
