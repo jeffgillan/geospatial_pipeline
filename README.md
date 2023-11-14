@@ -1,4 +1,8 @@
-# OpenDroneMap
+# Geospatial Pipeline
+
+This repository shows an example of how to use docker and docker compose to create a pipeline for processing and analysis of geospatial data. In this case, a 'pipeline' is defined as a sequence of processing steps that are linked together and automated. With docker, we can create modular scripts that can be run on any computer without having to install software locally. Our example will photogrammetrically process a series of drone imagery into products such as point clouds, orthomosaics, and digital elevation models. The next step will use PDAL to filter points into ground and non-ground points. 
+
+## OpenDroneMap
 
 Open drone map is a command line tool that will create point clouds, orthomosaics, and DEMs from drone imagery using the SfM workflow
 
