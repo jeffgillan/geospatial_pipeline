@@ -27,13 +27,13 @@ services:
     command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-copc", "--pc-quality", "medium"]
 
   pdal_copc:
-    image: jeffgillan/pdal_copc:1.0
-    container_name: pdal_copc
+    image: jeffgillan/pdal_csf:1.0
+    container_name: pdal_csf
     depends_on:
       odm:
           condition: service_completed_successfully
     volumes:
-      - /home/jgillan/Documents/PVCC_hole17/green/odm_georeferencing:/data
+      - .:/data
 ```      
 The most important part of the docker-compose file is the `depends_on` section which states that the second container will wait to start until the first container finishes. 
 
