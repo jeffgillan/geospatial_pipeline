@@ -23,7 +23,7 @@ services:
     image: opendronemap/odm
     container_name: odm
     volumes:
-      - "/home/jgillan/Documents/PVCC_hole17/green:/datasets/code"
+      - ".:/datasets/code"
     command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-copc", "--pc-quality", "medium"]
 
   pdal_copc:
