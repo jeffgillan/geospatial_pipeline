@@ -12,26 +12,6 @@ The easiest way to run ODM is to run it from an existing docker image which is f
 `opendronemap/odm`
 
 
-```
-docker run -ti --rm -v $(pwd):/datasets/code  opendronemap/odm:3.3.0 --project-path /datasets --skip-orthophoto --skip-report --pc-copc --pc-quality medium
-```
-
-This is what the command is doing:
-
-* Run docker
-* Not sure what flags `-it` do exactly
-* `--rm` removes image after is has been run
-* `-v` mounts a volume. In this case it is the present working directory (pwd) on my local machine. Within this directory there must be a sub-directory called `/images`. This is where ODM will look for all of the raw drone images. 
-* The directory is mounted to the directory `/datasets/code` inside the image
-* `opendronemap/odm` is the name of the Docker image which is located on Dockerhub
-* The rest of the arguments are flags and options. These are parameters to change how the processing is done. By default, ODM will run through the entire processing pipeline unless you say otherwise. Check out options at https://docs.opendronemap.org/arguments/
-
-To run ODM with very quickly with low quality:
-```
-docker run -ti -v /home/jgillan/Documents/PVCC_hole17/green:/datasets/code  opendronemap/odm --project-path /datasets --skip-orthophoto --skip-report --pc-las --skip-3dmodel --pc-quality lowest
-```
-
-
 ## Pipeline Exploration
 I have created a pipeline of sequential containers that creates drone imagery products and then does some point cloud analysis. The first container is `opendronemap/odm` and the second container is `jeffgillan/pdal_copc:1.0`. I want outputs from the first container (point clouds .las) to serve as inputs for the second container (using PDAL to convert .las to .copc). 
 
