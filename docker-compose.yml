@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   odm:
-    image: opendronemap/odm
+    image: opendronemap/odm:3.3.0
     container_name: odm
     volumes:
       - ".:/datasets/code"
