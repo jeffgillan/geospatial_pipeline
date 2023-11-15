@@ -13,7 +13,7 @@ The easiest way to run ODM is to run it from an existing docker image which is f
 
 
 ```
-docker run -ti --rm -v /home/jgillan/Documents/PVCC_hole17/green:/datasets/code  opendronemap/odm --project-path /datasets --skip-orthophoto --skip-report --pc-las --pc-copc 
+docker run -ti --rm -v $(pwd):/datasets/code  opendronemap/odm:3.3.0 --project-path /datasets --skip-orthophoto --skip-report --pc-copc --pc-quality medium
 ```
 
 This is what the command is doing:
@@ -47,7 +47,7 @@ services:
     container_name: odm
     volumes:
       - "/home/jgillan/Documents/PVCC_hole17/green:/datasets/code"
-    command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-las", "--skip-3dmodel", "--pc-quality", "lowest"]
+    command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-copc", "--pc-quality", "medium"]
 
   pdal_copc:
     image: jeffgillan/pdal_copc:1.0
