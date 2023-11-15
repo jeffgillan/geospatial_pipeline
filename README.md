@@ -2,6 +2,23 @@
 
 This repository shows an example of how to use docker and docker compose to create a pipeline for processing and analysis of geospatial data. In this case, a 'pipeline' is defined as a sequence of processing steps that are linked together and automated. With docker, we can create modular scripts that can be run on any computer without having to install software locally. Our example will 1) photogrammetrically process a series of drone images into a point cloud using OpenDroneMap; 2)  Filter the point cloud to separate tree points from ground points using PDAL; 3) Convert the filtered tree points into a canopy height model using an R Script. Each of these steps is an individual docker container. They are orchestrated and ran sequentially using a docker-compose yml configuration file.
 
+### 1. Clone this repository to your local machine
+
+`git clone https://github.com/jeffgillan/geospatial_pipeline.git`
+
+### 2. Change directories into the newly cloned repository
+
+`cd geospatial_pipeline`
+
+### 3. Run docker-Compose
+
+`docker-compose up`
+
+Your if everything worked correctly...
+
+
+
+
 ## Container 1: opendronemap/odm:3.3.0
 
 Open drone map is a command line tool that will create point clouds, orthomosaics, and DEMs from drone imagery using the SfM workflow. We are using it in this pipeline to create a cloud optimized point cloud (.copc.laz) from a series of drone images found in `/images` in this repository
@@ -10,6 +27,8 @@ Details on how to run OpenDroneMap as a docker container are found in this repos
 
 
 ## Container 2: jeffgillan/pdal_csf:1.0
+
+Container 2 will take the output from Container 1 (.copc.laz point cloud) and apply a Cloth Simulation Filter to classify tree points from ground points. https://github.com/jeffgillan/pdal_filters.csf
 
 
 A `docker-compose.yml` is used to orchestrate this pipeline
