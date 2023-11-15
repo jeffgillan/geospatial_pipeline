@@ -9,8 +9,8 @@ services:
     command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-las", "--skip-3dmodel", "--pc-quality", "lowest"]
 
   pdal_copc:
-    image: jeffgillan/pdal_copc:1.0
-    container_name: pdal_copc
+    image: jeffgillan/pdal_csf:1.0
+    container_name: pdal_csf
     depends_on:
       odm:
           condition: service_completed_successfully
