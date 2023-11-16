@@ -15,7 +15,9 @@ This repository shows an example of how to use docker and docker compose to crea
 
 `docker-compose up`
 
-If everything worked correctly...
+This will take some time and will depend on your local computing resources. Expect several minutes. If everything worked correctly it will populate your local directory with several new folders and files. We are primarily interested in looking at the files within the directory `odm_georeferencing`. It first container should have created a file called `odm_georeferenced_model.copc.laz`. This is a point cloud file created by photogrammetry algorithms. The second container shoud have created a file called `odm_georeferenced_model_filtered.copc.laz`. This is the same point cloud, but the points have been classified as ground and tree canopy.
+
+You can visualize the point cloud using this web viewer https://viewer.copc.io/
 
 
 
