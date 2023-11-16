@@ -3,7 +3,7 @@
 This repository shows an example of how to use docker and docker compose to create a pipeline for processing and analysis of geospatial data. In this case, a 'pipeline' is defined as a sequence of processing steps that are linked together and automated. With docker, we can create modular scripts that can be run on any computer without having to install software locally. Our example will 1) photogrammetrically process a series of drone images into a point cloud using OpenDroneMap; 2)  Filter the point cloud to separate tree points from ground points using PDAL; 3) Not ready yet. Each of these steps is an individual docker container. They are orchestrated and ran sequentially using a docker-compose yml configuration file.
 
 ### 1. Clone this repository to your local machine
-!!Warning: Cloing this repo will downdload 363MB of drone imagery to your local machine!!
+!!Warning: Cloning this repo will downdload 363MB of drone imagery to your local machine!!
 
 `git clone https://github.com/jeffgillan/geospatial_pipeline.git`
 
