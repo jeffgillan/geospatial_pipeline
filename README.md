@@ -15,7 +15,7 @@ This repository shows an example of how to use docker and docker compose to crea
 
 `docker-compose up`
 
-This will take some time and will depend on your local computing resources. Expect several minutes. If everything worked correctly it will populate your local directory with several new folders and files. We are primarily interested in looking at the files within the directory `odm_georeferencing`. It first container should have created a file called `odm_georeferenced_model.copc.laz`. This is a point cloud file created by photogrammetry algorithms. The second container shoud have created a file called `odm_georeferenced_model_filtered.copc.laz`. This is the same point cloud, but the points have been classified as ground and tree canopy.
+This will take some time and will depend on your local computing resources. Expect several minutes. If everything worked correctly it will populate your local directory with several new folders and files. We are primarily interested in looking at the files within the directory `odm_georeferencing`. It first container should have created a file called `odm_georeferenced_model.copc.laz`. This is a point cloud file created by photogrammetry algorithms. The second container should have created a file called `odm_georeferenced_model_filtered.copc.laz`. This is the same point cloud, but the points have been classified as ground and tree canopy.
 
 You can visualize the point cloud using this web viewer https://viewer.copc.io/
 
@@ -31,7 +31,7 @@ Details on how to run OpenDroneMap as a docker container are found in this repos
 
 ## Container 2: jeffgillan/pdal_csf:1.0
 
-Container 2 will take the output from Container 1 (.copc.laz point cloud) and apply a Cloth Simulation Filter to classify tree points from ground points. Information on this container are in this repository https://github.com/jeffgillan/pdal_filters.csf
+Container 2 will take the output from Container 1 (.copc.laz point cloud) and apply a Cloth Simulation Filter to classify tree points from ground points. Information on this container are in this repository https://github.com/jeffgillan/pdal_filters.csf. We are using the docker image `jeffgillan/pdal_csf:1.0` which is located in [Dockerhub](https://hub.docker.com/)
 
 
 
