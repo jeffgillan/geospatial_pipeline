@@ -11,6 +11,10 @@ This repository shows an example of how to use docker and docker compose to crea
 
 `cd geospatial_pipeline`
 
+### 1. Alternative
+
+Launch an instance of Github Codespaces from this repository. Choose a large VM (16 cores with 64GB RAM)
+
 ### 3. Run docker-Compose
 
 `docker-compose up`
