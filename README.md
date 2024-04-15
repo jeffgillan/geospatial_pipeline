@@ -28,7 +28,8 @@ This will take some time and will depend on your local computing resources. Expe
 You can visualize the point cloud using this web viewer https://viewer.copc.io/
 
 
-<img src="https://github.com/ua-datalab/Geospatial_Workshops/blob/main/images/copc_viewer.png" width=700>
+<img src="https://github.com/jeffgillan/geospatial_pipeline/blob/main/assets/copc_viewer.png" width=700>
+
 
 ## Container 1: opendronemap/odm:3.3.0
 
