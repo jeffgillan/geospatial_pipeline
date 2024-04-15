@@ -16,7 +16,7 @@ This repository shows an example of how to use docker and docker compose to crea
 ### 1. Alternative
 
 Launch an instance of Github Codespaces from this repository. Choose a large VM (16 cores with 64GB RAM)
-<img src="https://github.com/jeffgillan/geospatial_pipeline/blob/main/images/codespace_screenshot.png" width=700>
+<img src="https://github.com/jeffgillan/geospatial_pipeline/blob/main/assets/codespace_screenshot.png" width=700>
 
 
 ### 3. Run docker-Compose
