@@ -5,8 +5,8 @@ services:
     image: opendronemap/odm:3.3.0
     container_name: odm
     volumes:
-      - ".:/datasets/code"
-    command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-copc", "--pc-quality", "low"]
+      - ".:/datasets/code" #mount the present working directory into the container
+    command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--skip-3dmodel", "--pc-copc", "--pc-quality", "low"]
 
   pdal_copc:
     image: jeffgillan/pdal_csf:1.0
