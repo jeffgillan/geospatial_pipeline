@@ -35,12 +35,12 @@ You can visualize the point cloud using this web viewer https://viewer.copc.io/
 
 Open drone map is a command line tool that will create point clouds, orthomosaics, and DEMs from drone imagery using the SfM workflow. We are using it in this pipeline to create a cloud optimized point cloud (.copc.laz) from a series of drone images found in `/images` in this repository
 
-Details on how to run OpenDroneMap as a docker container are found in this repository https://github.com/jeffgillan/opendronemap. We are using the docker image `opendronemap/odm:3.3.0` which located on [Dockerhub](https://hub.docker.com/)
+Details on how to run OpenDroneMap as a docker container are found in this repository https://github.com/jeffgillan/opendronemap. We are using the docker image `opendronemap/odm:3.3.0` which located on [Dockerhub](https://hub.docker.com/r/opendronemap/odm)
 
 
 ## Container 2: jeffgillan/pdal_csf:1.0
 
-Container 2 will take the output from Container 1 (.copc.laz point cloud) and apply a Cloth Simulation Filter to classify tree points from ground points. Information on this container are in this repository https://github.com/jeffgillan/pdal_filters.csf. We are using the docker image `jeffgillan/pdal_csf:1.0` which is located in [Dockerhub](https://hub.docker.com/)
+Container 2 will take the output from Container 1 (.copc.laz point cloud) and apply a Cloth Simulation Filter to classify tree points from ground points. Information on this container are in this repository https://github.com/jeffgillan/pdal_filters.csf. We are using the docker image `jeffgillan/pdal_csf:1.0` which is located in [Dockerhub](https://hub.docker.com/repository/docker/jeffgillan/pdal_csf/general)
 
 
 
@@ -58,7 +58,7 @@ services:
     container_name: odm
     volumes:
       - ".:/datasets/code"
-    command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-copc", "--pc-quality", "medium"]
+    command: ["--project-path", "/datasets", "--skip-orthophoto", "--skip-report", "--pc-copc", "--pc-quality", "low"]
 
   pdal_copc:
     image: jeffgillan/pdal_csf:1.0
