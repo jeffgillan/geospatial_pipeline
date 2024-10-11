@@ -76,6 +76,8 @@ The most important part of the docker-compose file is the `depends_on` section w
 
 `docker-compose up`
 
+<br>
+<br>
 
 ## Random Docker Things
 Look at the directory structure inside a docker image
