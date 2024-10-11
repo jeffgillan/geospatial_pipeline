@@ -4,6 +4,9 @@ This repository shows an example of how to use docker and docker compose to crea
 
 <img src="https://github.com/ua-datalab/Geospatial_Workshops/blob/main/images/drone_pipeline.png" width=800>
 
+<br>
+<br>
+
 ### 1. Clone this repository to your local machine
 !!Warning: Cloning this repo will downdload 363MB of drone imagery to your local machine!!
 
